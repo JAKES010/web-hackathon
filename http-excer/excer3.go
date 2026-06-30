@@ -5,7 +5,7 @@ import (
 	"net/http"
 )
 
-func headers(w http.ResponseWriter, r *http.Request) {
+func HeadersHandler(w http.ResponseWriter, r *http.Request) {
 	token := r.Header.Get("X-Custom-Token")
 	if token == "" {
 		http.Error(w, "X-Custom-Token header is missing", http.StatusBadRequest)
